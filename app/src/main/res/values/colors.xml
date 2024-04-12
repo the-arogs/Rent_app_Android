@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="blue">#003262</color>
+    <color name="blue_light">#40003262</color>
+    <color name="blue2">#045074</color>
+    <color name="blue3">#3E9AD7</color>
+    <color name="blue3_light">#403E9AD7</color>
+    <color name="california">#FDB515</color>
+</resources>

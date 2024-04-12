@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".screens.owner.AddRentalActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/options_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white"
+        android:background="@color/blue3"
+        />
+
+    <TextView
+        android:id="@+id/tv_screen_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add Rental"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        app:layout_constraintTop_toBottomOf="@+id/options_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_property_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Property Type: "
+        app:layout_constraintTop_toBottomOf="@+id/tv_screen_label"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_property_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_condo"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tv_property_type"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Condo"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_house"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintStart_toEndOf="@id/rb_condo"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="House"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_apartment"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintStart_toEndOf="@id/rb_house"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Apartment"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:id="@+id/rb_basement"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintStart_toEndOf="@id/rb_apartment"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Basement"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Property Description: "
+        app:layout_constraintTop_toBottomOf="@id/rg"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/et_desc"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Property Description"
+        android:fontFamily="@font/montserrat_bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/tv_desc"
+        app:layout_constraintTop_toBottomOf="@id/rg" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+
+        android:layout_height="wrap_content"
+        android:text="Property Address: "
+        app:layout_constraintTop_toBottomOf="@id/et_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Property Address"
+        app:layout_constraintTop_toBottomOf="@id/et_desc"
+        app:layout_constraintStart_toEndOf="@id/tv_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <Switch
+        android:id="@+id/sw_curr_location"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Use current location?"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/et_address"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_bedroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Bedrooms: "
+        app:layout_constraintTop_toBottomOf="@id/sw_curr_location"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <EditText
+        android:id="@+id/et_bedroom"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:hint="Number of bedrooms"
+        app:layout_constraintTop_toBottomOf="@id/sw_curr_location"
+        app:layout_constraintStart_toEndOf="@id/tv_bathroom"
+        android:inputType="number"
+        android:fontFamily="@font/montserrat_bold"
+        />
+    <TextView
+        android:id="@+id/tv_bathroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Bathrooms: "
+        app:layout_constraintTop_toBottomOf="@id/et_bedroom"
+        android:fontFamily="@font/montserrat_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/et_bathroom"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:hint="Number of bathrooms"
+        app:layout_constraintTop_toBottomOf="@id/et_bedroom"
+        app:layout_constraintStart_toEndOf="@id/tv_bathroom"
+        android:inputType="number"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_kitchen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Kitchens: "
+        app:layout_constraintTop_toBottomOf="@id/et_bathroom"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <EditText
+        android:id="@+id/et_kitchen"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:hint="Number of kitchens"
+        app:layout_constraintTop_toBottomOf="@id/et_bathroom"
+        app:layout_constraintStart_toEndOf="@id/tv_bathroom"
+        android:inputType="number"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_amenity"
+        android:text="Amenities:"
+        app:layout_constraintTop_toBottomOf="@id/et_kitchen"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_kitchen"
+        app:layout_constraintStart_toEndOf="@id/tv_amenity"
+        android:id="@+id/cb_gym"
+        android:text="Gym"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cb_gym"
+        app:layout_constraintStart_toEndOf="@id/tv_amenity"
+        android:id="@+id/cb_pool"
+        android:text="Swimming Pool"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_kitchen"
+        app:layout_constraintStart_toEndOf="@id/cb_pool"
+        android:id="@+id/cb_den"
+        android:text="Den"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cb_den"
+        app:layout_constraintStart_toEndOf="@id/cb_pool"
+        android:id="@+id/cb_balcony"
+        android:text="Balcony"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <Switch
+        android:id="@+id/sw_available"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Available for Rent?"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/cb_pool"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rent Price: "
+        app:layout_constraintTop_toBottomOf="@id/sw_available"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+
+        />
+
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="Property Price"
+        app:layout_constraintTop_toBottomOf="@id/sw_available"
+        app:layout_constraintStart_toEndOf="@id/tv_price"
+        android:inputType="numberDecimal"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:text="POST RENTAL"
+        android:id="@+id/btn_post"
+        android:background="@drawable/btn_primar_bg"
+        app:layout_constraintTop_toBottomOf="@+id/et_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
